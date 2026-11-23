@@ -5,13 +5,15 @@
 Applying and extending halasz_resonator's inverse calculation (2026, Theorem 4(1)), we prove Sequence Machine's conjecture A322026(n)=A323884(25n), recorded by Antti Karttunen in the final Formula of OEIS A322026, revision 41, 8 September 2024. The rank function a=A322026 is unchanged on multiplying its argument by a prime greater than 3. We show that this invariance forces its Dirichlet inverse b=A323883 to vanish at every multiple of the square of such a prime. We classify all positive multipliers: A323884(Mn)=a(n) for every positive n exactly when gcd(M,6)=1 and M is not squarefree. The same argument proves and extends Karttunen's recorded 2022 identity A126760(n)=A323882(4n). We prove the neighboring rank and ordinal-transform identities and distinguish the smooth-number rank array from the rational rank array in a cross-referenced entry.
 
 - PDF: [frozen public file](paper.pdf)
+- DOI: [https://doi.org/10.5281/zenodo.24407275](https://doi.org/10.5281/zenodo.24407275)
+- Concept DOI: [https://doi.org/10.5281/zenodo.24407274](https://doi.org/10.5281/zenodo.24407274)
 - License: CC-BY-4.0
 - Version: 2
 - Mathesis record: [oeis-a322026-sequence-machine-dirichlet-inverse-identity](https://mathesis-omega-research.apps.chrono-ai.fun/papers/oeis-a322026-sequence-machine-dirichlet-inverse-identity?version=2)
 
 ## How to cite
 
-Haobo Ma, Wenlin Zhang (2026). Multiplier classifications resolving Sequence Machine's conjecture in OEIS A322026, revision 41, final Formula (8 September 2024): extensions of halasz_resonator's inverse calculation (2026). Mathesis, version 2. https://mathesis-omega-research.apps.chrono-ai.fun/papers/oeis-a322026-sequence-machine-dirichlet-inverse-identity?version=2
+Haobo Ma, Wenlin Zhang (2026). Multiplier classifications resolving Sequence Machine's conjecture in OEIS A322026, revision 41, final Formula (8 September 2024): extensions of halasz_resonator's inverse calculation (2026). Mathesis, version 2. https://doi.org/10.5281/zenodo.24407275
 
 ## Statement progress
 
