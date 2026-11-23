@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "Multiplier classifications resolving Sequence Machine's conjecture in OEIS A322026, revision 41, final Formula (8 September 2024): extensions of halasz_resonator's inverse calculation (2026)"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-22"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/oeis-a322026-sequence-machine-dirichlet-inverse-identity?version=2"
+license: "CC-BY-4.0"

@@ -1,0 +1,77 @@
+{
+  "arithmetic": "exact integers",
+  "binary_multiplier_identity_cases": 797,
+  "binary_nonnegativity_prior_counterexample": {
+    "A003602": 36373838,
+    "A349134": -50500080,
+    "A349135": -14126242,
+    "convolution": 0,
+    "divisors": 288,
+    "n": 72747675
+  },
+  "counting_formula_indices": 50000,
+  "dual_factorization_indices": 50000,
+  "dual_four_identity_indices": 12500,
+  "dual_inverse_convolution_indices": 5000,
+  "dual_multiplier_identity_cases": 3401,
+  "dual_nine_identity_indices": 5555,
+  "dual_positive_square_indices": 16667,
+  "elementary_smooth_count_and_gcd_indices": 2000,
+  "general_support_examples": [
+    {
+      "indices": 512,
+      "prime": 2
+    },
+    {
+      "indices": 512,
+      "prime": 3
+    },
+    {
+      "indices": 512,
+      "prime": 5
+    },
+    {
+      "indices": 512,
+      "prime": 7
+    }
+  ],
+  "inverse_convolution_indices": 5000,
+  "inverse_factorization_indices": 50000,
+  "multiplier_range": {
+    "first": 1,
+    "last": 1000
+  },
+  "mutual_ordinal_transform_indices": 50000,
+  "nonsquarefree_multiplier_identity_cases": 2497,
+  "prime_sign_cases": 83786,
+  "prime_square_vanishing_cases": 4502,
+  "proof_scope": "Finite comparisons supplement the written all-index proofs in note.tex.",
+  "published_prefix_lengths": {
+    "A001511": 105,
+    "A087465": 72,
+    "A092673": 106,
+    "A247714": 67,
+    "A255975": 67,
+    "A322026": 105,
+    "A323881": 92,
+    "A323882": 105,
+    "A323883": 96,
+    "A323884": 105,
+    "A323885": 105,
+    "A349134": 86,
+    "A349135": 92
+  },
+  "rank_and_restricted_growth_indices": 50000,
+  "rank_array_counterexample": {
+    "A087465": 48,
+    "A247714": 49,
+    "zero_based_position": 35
+  },
+  "record_positions_compared": 90,
+  "ruler_multiplier_identity_cases": 8039,
+  "status": "pass",
+  "target_identity_indices": {
+    "first": 1,
+    "last": 2000
+  }
+}

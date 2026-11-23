@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 104241,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "9e5df4c12d0cbcbef2354bdaf32068549dedb14d34a5836461b919a7f66a7ef4",
+      "sha256": "9e5df4c12d0cbcbef2354bdaf32068549dedb14d34a5836461b919a7f66a7ef4"
+    },
+    "source": {
+      "bytes": 20131,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "f5f445e4cc522cf59f1c75a144d3921bc4e4f2fc9212dd063cfac4fe56f371a8",
+      "sha256": "f5f445e4cc522cf59f1c75a144d3921bc4e4f2fc9212dd063cfac4fe56f371a8"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "Applying and extending halasz_resonator's inverse calculation (2026, Theorem 4(1)), we prove Sequence Machine's conjecture A322026(n)=A323884(25n), recorded by Antti Karttunen in the final Formula of OEIS A322026, revision 41, 8 September 2024. The rank function a=A322026 is unchanged on multiplying its argument by a prime greater than 3. We show that this invariance forces its Dirichlet inverse b=A323883 to vanish at every multiple of the square of such a prime. We classify all positive multipliers: A323884(Mn)=a(n) for every positive n exactly when gcd(M,6)=1 and M is not squarefree. The same argument proves and extends Karttunen's recorded 2022 identity A126760(n)=A323882(4n). We prove the neighboring rank and ordinal-transform identities and distinguish the smooth-number rank array from the rational rank array in a cross-referenced entry.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 2,
+    "doi": null,
+    "lean_source": {
+      "revision": "e0da8fcc80226febc4e7ea0836927bc71d158292",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/e0da8fcc80226febc4e7ea0836927bc71d158292/D5/S3/Arith/DirichletInverse/OeisA322026DirichletInverseIdentity.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 104241,
+      "sha256": "9e5df4c12d0cbcbef2354bdaf32068549dedb14d34a5836461b919a7f66a7ef4",
+      "url": "/api/v1/collected-papers/oeis-a322026-sequence-machine-dirichlet-inverse-identity/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-22T22:16:05.877383824Z",
+    "record": "oeis-a322026-sequence-machine-dirichlet-inverse-identity",
+    "repository_name": "oeis-a322026-sequence-machine-dirichlet-inverse-identity",
+    "source": {
+      "bytes": 20131,
+      "sha256": "f5f445e4cc522cf59f1c75a144d3921bc4e4f2fc9212dd063cfac4fe56f371a8",
+      "url": "/api/v1/collected-papers/oeis-a322026-sequence-machine-dirichlet-inverse-identity/files/source?version=2"
+    },
+    "title": "Multiplier classifications resolving Sequence Machine's conjecture in OEIS A322026, revision 41, final Formula (8 September 2024): extensions of halasz_resonator's inverse calculation (2026)",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-22T22:16:05.877383824Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "oeis-a322026-sequence-machine-dirichlet-inverse-identity"
+  }
+}

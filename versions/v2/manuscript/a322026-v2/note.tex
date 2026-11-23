@@ -1,0 +1,480 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,tabularx,longtable,array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\A}[1]{\textnormal{A#1}}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\title{Multiplier classifications resolving Sequence Machine's conjecture\\
+in OEIS A322026, revision 41, final Formula (8 September 2024):\\
+extensions of halasz\_resonator's inverse calculation (2026)}
+\author{Haobo Ma\thanks{ChronoAI Pte Ltd, Singapore.}\and
+Wenlin Zhang\thanks{National University of Singapore; ChronoAI Pte Ltd, Singapore.}}
+\date{7 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Applying and extending halasz\_resonator's inverse calculation (2026,
+Theorem 4(1)), we prove Sequence Machine's conjecture
+$\A{322026}(n)=\A{323884}(25n)$,
+recorded by Antti Karttunen in the final Formula of OEIS A322026,
+revision 41, 8 September 2024. The rank function $a=\A{322026}$ is unchanged
+on multiplying its argument by a prime greater than $3$. We show that this
+invariance forces its Dirichlet inverse $b=\A{323883}$ to vanish at every
+multiple of the square of such a prime. We classify all positive multipliers:
+$\A{323884}(Mn)=a(n)$ for every $n\geq1$ exactly when
+$\gcd(M,6)=1$ and $M$ is not squarefree. The same argument proves and
+extends Karttunen's recorded 2022 identity
+$\A{126760}(n)=\A{323882}(4n)$.
+We prove the neighboring rank and ordinal-transform identities and
+distinguish the smooth-number rank array from the rational rank array
+in a cross-referenced entry.
+\end{abstract}
+
+\section{The sequence and the conjecture}
+The final Formula in \cite{a322026} reads
+\begin{quote}
+\texttt{a(n) = A323884(25*n). [Conjectured by Sequence Machine]}
+\end{quote}
+Here $b=\A{323883}$ is the Dirichlet inverse of $a=\A{322026}$, and
+$C=\A{323884}=a+b$ is a pointwise sum \cite{inverse,sum}.
+The conjecture follows once $a(25n)=a(n)$ and $b(25n)=0$.
+The inverse mechanism specializes a prior calculation \cite{tower};
+the unrestricted multiplier classifications below are its applications
+and extensions, rather than a new general inversion principle.
+The latter vanishing is a consequence of Dirichlet inversion, rather than
+of multiplicativity of $a$: indeed $a(6)=5\ne a(2)a(3)=6$.
+
+For $n\geq1$ define its $3$-smooth part and its complementary factor by
+\[
+ s(n)=2^{v_2(n)}3^{v_3(n)},\qquad q(n)=n/s(n),\qquad \gcd(q(n),6)=1.
+\]
+Let $H_1<H_2<\cdots$ list the positive $3$-smooth numbers $2^i3^j$,
+where $i,j\geq0$. The rank formula in the posing entry is
+\begin{equation}\label{rank}
+ a(n)=R(s(n)),\qquad
+ R(x)=\#\{(i,j)\in\N^2:2^i3^j\leq x\}.
+\end{equation}
+Thus $s=\A{065331}$, $R=\A{071521}$ and $H=\A{003586}$
+\cite{smoothpart,count,smooth}.
+This also proves that \eqref{rank} is the lexicographically earliest
+sequence in the name of \A{322026}. A valuation pair $(i,j)$ first
+occurs at the integer $2^i3^j$. In a lexicographically earliest labeling,
+the first new pair receives the smallest positive label not already
+used, and every later occurrence of that pair receives the same label.
+Otherwise changing that label to the smallest permissible one gives a
+lexicographically smaller admissible sequence. The first occurrences
+are therefore labeled in increasing order $H_1,H_2,\ldots$, exactly as
+in \eqref{rank}. In particular,
+\begin{equation}\label{invariance}
+ a(1)=1,\qquad a(Mn)=a(n)\quad\text{if }\gcd(M,6)=1.
+\end{equation}
+
+\section{Dirichlet inversion at an insensitive prime}
+For integer-valued functions on the positive integers write
+\[
+ (f*g)(n)=\sum_{d\mid n}f(d)g(n/d),\qquad
+ \varepsilon(n)=\begin{cases}1&n=1,\\0&n>1.\end{cases}
+\]
+If $f(1)=1$, its inverse $g$ exists uniquely: $g(1)=1$ and, for $n>1$,
+\begin{equation}\label{recurrence}
+ g(n)=-\sum_{\substack{d\mid n\\d>1}}f(d)g(n/d).
+\end{equation}
+This recursion gives $f*g=\varepsilon$ by construction. All sums are
+finite, so the changes in order used below require no analytic convergence.
+
+Prime-variable formal power series for this convolution are classical
+\cite[Section 14]{cashwell}. The fixed-prime calculation in
+halasz\_resonator \cite[Section 3.4, Theorem 4(1), first proof paragraph]{tower}
+already contains the following lemma: if
+$F_j=\sum_{p\nmid m}f(p^jm)m^{-z}$, prime-insensitivity makes
+$F_j=F_0$, hence $(\sum_{j\geq0}F_jX^j)^{-1}=(1-X)F_0^{-1}$.
+Coefficient comparison gives the sign and vanishing rules. We give an
+elementary convolution proof of this specialization.
+
+\begin{lemma}\label{support}
+Let $p$ be prime, $f(1)=1$, and $f(pn)=f(n)$ for every $n\geq1$.
+For $g=f^{-1}$ and $p\nmid m$,
+\[
+ g(pm)=-g(m),\qquad g(p^r m)=0\quad(r\geq2).
+\]
+\end{lemma}
+\begin{proof}
+Let $\delta_p$ be $1$ at $p$ and $0$ elsewhere, and set
+$h=(\varepsilon-\delta_p)*f$. Directly,
+\[
+ h(n)=f(n)-\mathbf1_{p\mid n}f(n/p).
+\]
+Hence $h(1)=1$, and $h(n)=0$ whenever $p\mid n$.
+Put $k=h^{-1}$. We first show $k(n)=0$ whenever $p\mid n$,
+by strong induction on $n$. In \eqref{recurrence} for $h$ and $k$,
+each summand with $p\mid d$ has $h(d)=0$; in each remaining summand,
+$p\mid n/d$ and $n/d<n$, so $k(n/d)=0$ by induction. This proves
+the assertion. Commutativity and associativity of convolution now give
+\[
+ g=k*(\varepsilon-\delta_p),\qquad
+ g(n)=k(n)-\mathbf1_{p\mid n}k(n/p),
+\]
+since multiplying the first expression by $f$ gives $k*h=\varepsilon$.
+For $p\nmid m$, this says $g(m)=k(m)$, $g(pm)=-k(m)$, and
+$g(p^r m)=0$ for every $r\geq2$.
+\end{proof}
+
+\begin{theorem}\label{main}
+For every $n\geq1$,
+\[
+ \A{322026}(n)=\A{323884}(25n).
+\]
+More generally, if $b=a^{-1}$ and $n=s t$ with $s$ $3$-smooth and
+$\gcd(t,6)=1$, then
+\begin{equation}\label{mobius}
+ b(st)=b(s)\mu(t),
+\end{equation}
+where $\mu$ is the M\"obius function.
+\end{theorem}
+\begin{proof}
+By \eqref{invariance}, Lemma~\ref{support} applies to every prime $p>3$.
+In particular $b(25n)=0$, and $a(25n)=a(n)$, proving the conjecture.
+If $t$ has a squared prime factor, the same lemma gives $b(st)=0$
+and $\mu(t)=0$. Otherwise write $t=p_1\cdots p_r$ with distinct primes
+$p_j>3$. Repeatedly applying $b(p_j m)=-b(m)$, where $p_j\nmid m$,
+gives $b(st)=(-1)^r b(s)=\mu(t)b(s)$. This includes $t=1$.
+\end{proof}
+
+\begin{corollary}\label{multipliers}
+For any positive integer $M$, the equality
+$C(Mn)=a(n)$ holds for all $n\geq1$ if and only if
+$\gcd(M,6)=1$ and $M$ is not squarefree.
+The smallest such multiplier is $25$.
+\end{corollary}
+\begin{proof}
+If the equality holds, put $n=25$. Lemma~\ref{support} gives
+$b(25M)=0$, so $1=a(25)=a(25M)=R(s(M))$.
+The only $3$-smooth number with rank $1$ is $1$, hence $s(M)=1$
+and $\gcd(M,6)=1$. Conversely, if $\gcd(M,6)=1$ and
+$p^2\mid M$ for a prime $p>3$, Lemma~\ref{support} gives
+$b(Mn)=0$ for every $n$, and \eqref{invariance} gives $a(Mn)=a(n)$.
+If $M$ is squarefree, \eqref{mobius} and $b(1)=1$ give
+$C(M)=1+\mu(M)\ne1=a(1)$, so $n=1$ is a counterexample.
+A nonsquarefree integer coprime to $6$ is divisible by $p^2$ with
+$p\geq5$, and hence is at least $25$; the value $25$ works.
+\end{proof}
+
+\section{Neighboring formulas in A322026}
+\begin{corollary}\label{neighbors}
+All nonconjectural Formulas of A322026 hold. Its record-position and
+mutual ordinal-transform statements and all four equality-implication
+Comments hold as well.
+\end{corollary}
+\begin{proof}
+The rank description also accounts for the other formulas in the posing
+entry. David A. Corneth's formulas of 3--4 December 2018 state
+\begin{equation}\label{corneth}
+ a(H_r)=a((6k+1)H_r)=a((6k-1)H_r)=r\quad(k\geq1),\qquad
+ H_{a(n)}=s(n).
+\end{equation}
+They follow from $s(H_r)=H_r$, $R(H_r)=r$, and
+$\gcd(6k\pm1,6)=1$. The record positions are exactly $H_r$:
+the first occurrence of label $r$ is at $H_r$, and these first
+occurrences have increasing labels. Thus \eqref{corneth} recovers
+the already recorded rank and record statements. The precise criterion is
+$a(k)>a(i)$ for all $1\leq i<k$, and it holds exactly when $k=H_r$.
+The preceding sentence in the source's record Comment has ambiguous
+quantifier scope; its following record-position sentence has this precise meaning.
+
+The other formula in Karttunen's 2024 block is
+\begin{equation}\label{iverson}
+ a(n)=\sum_{j=1}^n[\A{126760}(j)=\A{126760}(n)].
+\end{equation}
+To see this, write $u(n)=\A{126760}(n)$. Its defining recurrence
+\cite{complement} removes factors $2$ and $3$ and assigns
+$u(6k+1)=2k+1$, $u(6k+5)=2k+2$. These values enumerate the
+integers coprime to $6$ injectively. Consequently $u(j)=u(n)$
+if and only if $q(j)=q(n)$. Such $j\leq n$ are precisely
+$j=q(n)2^i3^\ell$ with $2^i3^\ell\leq s(n)$; their number is
+\eqref{rank}, proving \eqref{iverson}.
+
+If the ordinal transform of $v$ at $n$ denotes
+$\sum_{j\leq n}[v(j)=v(n)]$, then $a$ and $u$ are mutual ordinal
+transforms, as recorded in the Comments. Indeed $a(j)=a(n)$ means
+$s(j)=s(n)$; such $j\leq n$ have the form $s(n)r$ with
+$r\leq q(n)$ coprime to $6$. Their number is the rank of $q(n)$
+among integers coprime to $6$, namely $u(n)$. Together with
+\eqref{iverson} this proves both directions. The same argument makes
+$u$ the ordinal transform of $s$, as stated in A126760.
+Karttunen had already explained the mutual-transform relation in the
+4 December 2018 discussion of A322026 and recorded it in revision 25
+\cite{ordinalhistory}; the argument above supplies an explicit proof.
+
+For completeness, the equality implications in the Comments also follow
+from the valuation pairs. Equality of $a$ is equality of
+$(v_2,v_3)$, hence implies equality of $\min(v_2,v_3)=\A{122841}$,
+$\max(v_2,v_3)=\A{244417}$ and the restricted-growth label of their
+unordered pair, $\A{322316}$. Equality of that unordered pair implies
+equality of $(v_2+1)(v_3+1)=\A{072078}$ \cite{valuationlinks}.
+The formula for $\A{305900}$ makes each non-prime-$>3$ input a separate
+class and identifies the primes greater than $3$; all the latter have
+valuation pair $(0,0)$. Thus equal $\A{305900}$ labels imply equal $a$
+\cite{filter}. This proves the source's existing Comments.
+\end{proof}
+
+\begin{corollary}\label{dual}
+Let $u=\A{126760}$, $d=u^{-1}=\A{323881}$, and
+$D=u+d=\A{323882}$. For $3$-smooth $s$ and $t$ coprime to $6$,
+\[
+ d(st)=\mu(s)d(t).
+\]
+For any positive integer $M$, $D(Mn)=u(n)$ for all $n\geq1$
+if and only if $M$ is $3$-smooth and $(4\mid M\text{ or }9\mid M)$.
+In particular $u(n)=D(4n)=D(9n)$; the first equality is Karttunen's
+Formula of 18 April 2022 in A126760 \cite{complement,dualinverse,dualsum}.
+Moreover $D(n)>0$ whenever $4\mid n$ or $9\mid n$.
+\end{corollary}
+\begin{proof}
+The recurrence for $u$ gives $u(2n)=u(3n)=u(n)$ and $u(1)=1$.
+Apply Lemma~\ref{support} successively at $2$ and $3$ to obtain
+$d(st)=\mu(s)d(t)$. If $M$ is $3$-smooth and has a squared prime
+factor, $u(Mn)=u(n)$ and $d(Mn)=0$, proving sufficiency.
+For necessity, evaluate a putative identity at $n=4$:
+$d(4M)=0$ implies $u(M)=u(4M)=u(4)=1$.
+The rank interpretation of $u$ gives $q(M)=1$, so $M$ is $3$-smooth.
+If it is squarefree, $M\in\{1,2,3,6\}$ and
+$D(M)=1+\mu(M)\ne1=u(1)$. This proves the classification.
+Finally $D(n)=u(n)\geq1$ whenever $4\mid n$ or $9\mid n$.
+\end{proof}
+
+The positivity statement restricts possible zeros, but does not settle the
+2021 observation in A323882 that zeros apparently have $\mu(n)=-1$,
+nor turn its finite nonnegativity observation into an all-index theorem.
+The divisor-sum Formula there follows immediately from
+$u*d=\varepsilon$: for $n>1$,
+$D(n)=-\sum_{1<e<n,\ e\mid n}u(e)d(n/e)$.
+
+\begin{corollary}\label{elementary}
+For positive integers $x,n$,
+\begin{align*}
+R(x)&=\sum_{i=0}^{\lfloor\log_2x\rfloor}
+ \bigl(\lfloor\log_3(x/2^i)\rfloor+1\bigr)\\
+&=\sum_{k=1}^x\mu(6k)\lfloor x/k\rfloor
+ =\sum_{k=1}^x\left(\left\lfloor\frac{6^k}{k}\right\rfloor
+ -\left\lfloor\frac{6^k-1}{k}\right\rfloor\right),
+\qquad s(n)=\gcd(n,6^n).
+\end{align*}
+These are the row-count, Cloitre (2007), Browne (2016), and
+Sykora (2016) identities in A071521 and A065331 \cite{count,smoothpart}.
+\end{corollary}
+\begin{proof}
+Counting one lattice row at a time gives the first sum.
+The sum $\sum_{k\mid m}\mu(6k)$ is $1$ when $m$ is $3$-smooth
+and $0$ otherwise: only squarefree $k$ coprime to $6$ contribute,
+and their sum is $\sum_{k\mid q(m)}\mu(k)$.
+Sum this identity for $m\leq x$ and interchange the finite sums.
+The floor difference is $[k\mid6^k]$, again the indicator of a
+$3$-smooth integer. Indeed each valuation of $k$ is at most $k$,
+so every $3$-smooth $k$ divides $6^k$; the converse follows from
+prime factorization. The same valuation bound proves the gcd identity.
+\end{proof}
+
+\begin{corollary}\label{arrays}
+Writing $T(i,j)=R(2^j3^i)$ for $i,j\geq0$, downward antidiagonal
+reading gives A247714, while the transposed array gives A255975.
+The identification of this array with A087465 in that entry's
+Comment of 25 January 2018 is false: $T(7,0)=49$, whereas
+the A087465 array has entry $48$ at $(7,0)$.
+The corrected rank parameter is $\log(3)/\log(2)$, not $3/2$.
+\end{corollary}
+\begin{proof}
+A247714 is the position of the antidiagonally listed $2^j3^i$
+in the increasing list of $3$-smooth integers, which is $T(i,j)$
+by definition \cite{arrays}. A255975 lists the same ranks in the
+transposed orientation. Logarithms preserve order, so $T(i,j)$
+is the rank of $j+i\log(3)/\log(2)$ among all such values.
+In contrast, the definition of the rank array in Kimberling and Brown
+\cite[Section 1]{rankarrays} orders $j+(3/2)i$, breaking ties
+by the smaller $i$ for A087465. At $(7,0)$ the smooth count is
+$12+10+8+7+5+4+2+1=49$.
+The rational rank is
+\[
+1+\#\{(j,i)\in\N^2:2j+3i<21\}
+ +\#\{(j,i)\in\N^2:2j+3i=21,\ i<7\}
+=1+44+3=48.
+\]
+This is the zero-based flattened position $35$, where the published
+prefixes of A247714 and A087465 give $49$ and $48$, respectively.
+\end{proof}
+
+The assertion corrected here is the smooth-rank identification in the
+2018 Comment: ``Then R(n,k) is the rank of T(n,k) when all the numbers
+in \{T(n,k)\} are jointly ranked.'' Its preceding display has
+$T(i,j)=2^j3^i$. This is not a correction to the rational-rank definition of A087465.
+Its rational-array recurrence is outside this note's scope.
+
+\begin{corollary}\label{binary}
+Let $v(n)=\A{003602}(n)=(n/2^{v_2(n)}+1)/2$ and
+$E=v+v^{-1}=\A{349135}$. Then $E(Mn)=v(n)$ for every positive $n$
+exactly when $M=2^r$ with $r\geq2$. In particular $E(4n)=v(n)$,
+as recorded by Karttunen on 7 December 2021 \cite{binarysum}.
+For $w(n)=1+v_2(n)=\A{001511}(n)$ and
+$J=w+w^{-1}=\A{323885}$, the identity $J(Mn)=w(n)$ for every
+positive $n$ holds exactly when $M$ is odd and nonsquarefree \cite{rulersum}.
+\end{corollary}
+\begin{proof}
+The function $v$ is insensitive to $2$. Lemma~\ref{support} proves
+sufficiency for $M=2^r$, $r\geq2$.
+Conversely, $n=4$ forces $v(M)=1$, so $M$ is a power of $2$;
+$n=1$ excludes $M=1,2$ because the inverse values there are $1$ and $-1$.
+For $w$, every odd prime is insensitive. Evaluating a putative identity
+at $n=9$ gives $1+v_2(M)=1$, forcing $M$ odd; $n=1$ excludes squarefree
+odd $M$, for which the inverse is $\mu(M)$ by Lemma~\ref{support}.
+An odd squared prime factor proves sufficiency by the same lemma.
+\end{proof}
+
+The question ``Are all terms nonnegative?'' in A349135 was
+already answered negatively by Karttunen (30 November 2024): for example,
+$E(72747675)=-14126242$. The exact-integer recurrence calculation in
+the accompanying checker reproduces this value. This is a prior answer,
+not a new nonnegativity conjecture or its first counterexample.
+
+\section{Source coverage}
+Here ``proved'' concerns the quoted conjecture or a stated source identity;
+an unposed generalization is identified separately. Existing formulas keep
+their original attribution. The table covers the Name, mathematical
+Comments and every Formula of A322026, together with the relevant companion
+items used above; it is not a claim about every formula in the OEIS link graph.
+\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.46\linewidth}>{\raggedright\arraybackslash}p{.49\linewidth}@{}}
+\toprule Source item and locator & Coverage \\
+\midrule\endhead
+A322026, rev. 41, final Formula (8 Sep 2024), ``Conjectured by Sequence Machine'' & Proved: Theorem~\ref{main}. \\
+A322026, Name; restricted-growth Comment; rank Formula (8 Sep 2024) & Proved: \eqref{rank} and the first-occurrence argument. \\
+A322026, Corneth's Formulas (3--4 Dec 2018); record-position Comment & Proved: Corollary~\ref{neighbors}; explicit record quantifiers supplied. \\
+A322026, Iverson Formula (8 Sep 2024); mutual ordinal-transform Comment & Proved: Corollary~\ref{neighbors}, including \eqref{iverson}; prior explanation: Karttunen, 4 Dec 2018, rev. 25. \\
+A322026, four equality-implication Comments; A322316, matching implication & Proved: Corollary~\ref{neighbors}. \\
+Prime-local inverse lemma & Reproved; prior calculation: halasz\_resonator (2026), Theorem 4(1). \\
+All positive multipliers for A323884 & Not posed; complete classification proved in Corollary~\ref{multipliers}. \\
+A323883 and A323884, Names and sum Formula & Defining inverse/sum identities used in Theorem~\ref{main}. \\
+A126760, recurrence, mutual-transform Comments (2019, 2024) & Proved: Corollary~\ref{neighbors}. \\
+A126760, Formula $u(n)=\A{323882}(4n)$ (18 Apr 2022) & Proved with attribution, and extended: Corollary~\ref{dual}. \\
+All positive multipliers for A323882; dual inverse support & Not posed; classification and factorization proved in Corollary~\ref{dual}. \\
+A323882, divisor-sum Formula (18 Aug 2021) & Proved directly from convolution after Corollary~\ref{dual}. \\
+A323882, nonnegativity range and apparent zero restriction (18 Aug 2021) & Not covered in full; positivity for multiples of $4$ or $9$ proved. \\
+A071521, row-count, Cloitre and Browne Formulas; A065331, Sykora Formula & Proved with attribution: Corollary~\ref{elementary}. \\
+A247714, Name; A255975, smooth-rank interpretation & Proved: Corollary~\ref{arrays}. \\
+A087465, smooth-rank Comment (25 Jan 2018) & Refuted-and-corrected: $49\ne48$ at $(7,0)$; use $\log_2 3$ instead of $3/2$. \\
+A349135, $4n$ Formula (7 Dec 2021) & Proved with attribution; full multiplier classification in Corollary~\ref{binary}. \\
+A349135, nonnegativity question and Comment (30 Nov 2024) & Answered: no; prior answer Karttunen (2024), reproduced by an exact finite calculation. \\
+A323885, inverse-sum definition & Not posed; complete multiplier classification in Corollary~\ref{binary}. \\
+A087465, rational-array recurrence; other unrelated cross-entry identities & Not covered. \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\section{Mathematical evidence and supplementary material}
+In the \href{https://github.com/the-omega-institute/trureturing/blob/e0da8fcc80226febc4e7ea0836927bc71d158292/D5/S3/Arith/DirichletInverse/OeisA322026DirichletInverseIdentity.lean}{pinned Lean source},
+the fully qualified declaration
+\begin{quote}\small\ttfamily
+D5.S3.Arith.DirichletInverse.\\
+OeisA322026DirichletInverseIdentity.result
+\end{quote}
+proves
+$a(n)=a(25n)+b(25n)$ for all natural indices, with $a(0)=b(0)=0$.
+Its $a$ is the lattice count in \eqref{rank}, its $b$ is the
+integer-valued Dirichlet inverse. Its finite box
+$0\leq i,j\leq s(n)$ contains every feasible pair, since
+$2^i\geq i+1$ and $3^j\geq j+1$. Its private helper
+\texttt{inverse\_prime\_square\_support} proves the vanishing part of
+Lemma~\ref{support} for every prime and every unit-headed integer-valued
+function insensitive to that prime. The restricted-growth interpretation,
+the sign rule, \eqref{mobius}, the unrestricted multiplier classification,
+Corollaries~\ref{neighbors}--\ref{binary}, and the coverage corrections
+have written proofs above; they are distinct from that declaration's scope.
+
+The accompanying \texttt{verify.py} uses integer arithmetic to compare
+the rank and first-occurrence definitions through $50\,000$, construct
+the Dirichlet inverse by \eqref{recurrence}, compare the published
+sequence prefixes, and check the target equality for $1\leq n\leq2\,000$.
+It also checks \eqref{mobius}, the companion inverse factorization and
+all four multiplier classifications through the bounds in
+\texttt{verification.json}, the published rank-array prefixes and the
+$49\ne48$ example, the prior negative A349135 value, and the prime-support lemma on four further
+integer-valued examples. These finite checks supplement the all-index
+proofs. The source archive contains this script,
+its numerical inputs and output, the LaTeX source, and build instructions.
+
+\begin{thebibliography}{10}
+\bibitem{a322026} A. Karttunen, OEIS A322026, revision 41,
+8 September 2024, Name, Comments and Formula; conjecture attributed to
+Sequence Machine. \url{https://oeis.org/A322026}.
+The \href{https://github.com/oeis/oeisdata/blob/f151d82acb28766e6034a902ed9fd0632b16f986/seq/A322/A322026.seq}{fixed entry text}
+specifies the version used here. See also
+\href{https://sequencedb.net/s/A322026}{Sequence Machine's A322026 formulas}.
+\bibitem{inverse} A. Karttunen, OEIS A323883, revision 5,
+8 February 2019, Name. \url{https://oeis.org/A323883}.
+\bibitem{sum} A. Karttunen, OEIS A323884, revision 7,
+8 February 2019, Name. \url{https://oeis.org/A323884}.
+\bibitem{smoothpart} R. Zumkeller, OEIS A065331, Name and Formula.
+\url{https://oeis.org/A065331}.
+\bibitem{count} B. Cloitre, OEIS A071521, Name and Comments.
+\url{https://oeis.org/A071521}.
+\bibitem{smooth} P. Zimmermann, OEIS A003586, Name.
+\url{https://oeis.org/A003586}.
+\bibitem{complement} N. J. A. Sloane, OEIS A126760;
+recurrence supplied by A. Karttunen, 28 January 2015, Name and Formula.
+\url{https://oeis.org/A126760}.
+\bibitem{valuationlinks} OEIS A122841, A244417, A322316 and A072078,
+Names and Formulas. \url{https://oeis.org/A122841};
+\url{https://oeis.org/A244417}; \url{https://oeis.org/A322316};
+\url{https://oeis.org/A072078}.
+\bibitem{filter} A. Karttunen, OEIS A305900, Formula.
+\url{https://oeis.org/A305900}.
+\bibitem{dualinverse} A. Karttunen, OEIS A323881, revision 14,
+6 January 2021, Name. \url{https://oeis.org/A323881}.
+\bibitem{dualsum} A. Karttunen, OEIS A323882, revision 15,
+18 August 2021, Comments and Formula. \url{https://oeis.org/A323882}.
+\bibitem{arrays} M. Marcus, OEIS A247714, revision 12,
+23 September 2014, Name; C. Kimberling, OEIS A255975, revision 12,
+27 March 2015, Comments; C. Kimberling, OEIS A087465, revision 29,
+24 August 2024, Name and Comment of 25 January 2018.
+\url{https://oeis.org/A247714}; \url{https://oeis.org/A255975};
+\url{https://oeis.org/A087465}.
+All OEIS entry texts used here are fixed at
+\href{https://github.com/oeis/oeisdata/tree/f151d82acb28766e6034a902ed9fd0632b16f986/seq}{the same scientific-data revision}.
+\bibitem{rankarrays} C. Kimberling and J. E. Brown,
+Partial Complements and Transposable Dispersions,
+\emph{Journal of Integer Sequences} \textbf{7} (2004), Article 04.1.6,
+Section 1 (definition of the rank array).
+\url{https://cs.uwaterloo.ca/journals/JIS/VOL7/Kimberling/kimber67.html}.
+\bibitem{cashwell} E. D. Cashwell and C. J. Everett,
+The ring of number-theoretic functions,
+\emph{Pacific Journal of Mathematics} \textbf{9} (1959), 975--985,
+Sections 3 and 14.
+\url{https://msp.org/pjm/1959/9-4/pjm-v9-n4-p02-p.pdf}.
+\bibitem{tower} halasz\_resonator,
+Dirichlet-Inverse Extensions of the Vasyunin-Balazard Biorthogonal System:
+Head-Tail Matrix-Loewner Inverse Gram Bounds, Algebraic Reciprocal Obstructions,
+and Certified Squarefree-Dilate Separation for the Davenport-Heilbronn Function,
+\emph{rStation}, Paper 7, version 1, 16 October 2026,
+Section 3.4, Theorem 4(1), first proof paragraph.
+\url{https://rstation.ai/problems/riemann_hypothesis/papers/7/v1}.
+\bibitem{binarysum} OEIS A003602, Name; A. Karttunen, OEIS A349134, Name;
+OEIS A349135, revision 30, Formula of 7 December 2021 and
+Comment of 30 November 2024.
+\url{https://oeis.org/A003602}; \url{https://oeis.org/A349134};
+\url{https://oeis.org/A349135}.
+\bibitem{rulersum} OEIS A001511, Name; A092673, Name and Formula;
+A323885, Name and Formula.
+\url{https://oeis.org/A001511}; \url{https://oeis.org/A092673};
+\url{https://oeis.org/A323885}.
+\bibitem{ordinalhistory} A. Karttunen, OEIS A322026 edit history,
+4 December 2018, discussion at revision 24 and revision 25
+(12:36:27 EST), mutual ordinal-transform explanation.
+\url{https://oeis.org/history?seq=A322026&start=10}.
+\end{thebibliography}
+\noindent\small License: Creative Commons Attribution 4.0 International
+(CC BY 4.0). \url{https://creativecommons.org/licenses/by/4.0/}.
+\end{document}

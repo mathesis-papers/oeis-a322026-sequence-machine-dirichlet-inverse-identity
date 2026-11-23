@@ -1,0 +1,332 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:oeis-a322026-sequence-machine-dirichlet-inverse-identity:2:s1",
+      "kind": "paper",
+      "label": "Lemma",
+      "lean_source": {
+        "revision": "e0da8fcc80226febc4e7ea0836927bc71d158292",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/e0da8fcc80226febc4e7ea0836927bc71d158292/D5/S3/Arith/DirichletInverse/OeisA322026DirichletInverseIdentity.lean"
+      },
+      "lineage": "collected:oeis-a322026-sequence-machine-dirichlet-inverse-identity:s1",
+      "macros": {
+        "\\A": "\\textnormal{A#1}",
+        "\\N": "\\mathbb N",
+        "\\Z": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a322026-sequence-machine-dirichlet-inverse-identity",
+      "scope": "in_scope",
+      "statement": "Let $p$ be prime, $f(1)=1$, and $f(pn)=f(n)$ for every $n\\geq1$.\nFor $g=f^{-1}$ and $p\\nmid m$,\n\\[\n g(pm)=-g(m),\\qquad g(p^r m)=0\\quad(r\\geq2).\n\\]",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Multiplier classifications resolving Sequence Machine's conjecture in OEIS A322026, revision 41, final Formula (8 September 2024): extensions of halasz_resonator's inverse calculation (2026)",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a322026-sequence-machine-dirichlet-inverse-identity"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:oeis-a322026-sequence-machine-dirichlet-inverse-identity:2:s2",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "e0da8fcc80226febc4e7ea0836927bc71d158292",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/e0da8fcc80226febc4e7ea0836927bc71d158292/D5/S3/Arith/DirichletInverse/OeisA322026DirichletInverseIdentity.lean"
+      },
+      "lineage": "collected:oeis-a322026-sequence-machine-dirichlet-inverse-identity:s2",
+      "macros": {
+        "\\A": "\\textnormal{A#1}",
+        "\\N": "\\mathbb N",
+        "\\Z": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a322026-sequence-machine-dirichlet-inverse-identity",
+      "scope": "in_scope",
+      "statement": "For every $n\\geq1$,\n\\[\n \\A{322026}(n)=\\A{323884}(25n).\n\\]\nMore generally, if $b=a^{-1}$ and $n=s t$ with $s$ $3$-smooth and\n$\\gcd(t,6)=1$, then\n\\begin{equation}\n b(st)=b(s)\\mu(t),\n\\end{equation}\nwhere $\\mu$ is the M\\\"obius function.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Multiplier classifications resolving Sequence Machine's conjecture in OEIS A322026, revision 41, final Formula (8 September 2024): extensions of halasz_resonator's inverse calculation (2026)",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a322026-sequence-machine-dirichlet-inverse-identity"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:oeis-a322026-sequence-machine-dirichlet-inverse-identity:2:s3",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "e0da8fcc80226febc4e7ea0836927bc71d158292",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/e0da8fcc80226febc4e7ea0836927bc71d158292/D5/S3/Arith/DirichletInverse/OeisA322026DirichletInverseIdentity.lean"
+      },
+      "lineage": "collected:oeis-a322026-sequence-machine-dirichlet-inverse-identity:s3",
+      "macros": {
+        "\\A": "\\textnormal{A#1}",
+        "\\N": "\\mathbb N",
+        "\\Z": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a322026-sequence-machine-dirichlet-inverse-identity",
+      "scope": "in_scope",
+      "statement": "For any positive integer $M$, the equality\n$C(Mn)=a(n)$ holds for all $n\\geq1$ if and only if\n$\\gcd(M,6)=1$ and $M$ is not squarefree.\nThe smallest such multiplier is $25$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Multiplier classifications resolving Sequence Machine's conjecture in OEIS A322026, revision 41, final Formula (8 September 2024): extensions of halasz_resonator's inverse calculation (2026)",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a322026-sequence-machine-dirichlet-inverse-identity"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:oeis-a322026-sequence-machine-dirichlet-inverse-identity:2:s4",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "e0da8fcc80226febc4e7ea0836927bc71d158292",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/e0da8fcc80226febc4e7ea0836927bc71d158292/D5/S3/Arith/DirichletInverse/OeisA322026DirichletInverseIdentity.lean"
+      },
+      "lineage": "collected:oeis-a322026-sequence-machine-dirichlet-inverse-identity:s4",
+      "macros": {
+        "\\A": "\\textnormal{A#1}",
+        "\\N": "\\mathbb N",
+        "\\Z": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a322026-sequence-machine-dirichlet-inverse-identity",
+      "scope": "in_scope",
+      "statement": "All nonconjectural Formulas of A322026 hold. Its record-position and\nmutual ordinal-transform statements and all four equality-implication\nComments hold as well.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Multiplier classifications resolving Sequence Machine's conjecture in OEIS A322026, revision 41, final Formula (8 September 2024): extensions of halasz_resonator's inverse calculation (2026)",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a322026-sequence-machine-dirichlet-inverse-identity"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s5",
+      "contributor": null,
+      "identity": "collected:oeis-a322026-sequence-machine-dirichlet-inverse-identity:2:s5",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "e0da8fcc80226febc4e7ea0836927bc71d158292",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/e0da8fcc80226febc4e7ea0836927bc71d158292/D5/S3/Arith/DirichletInverse/OeisA322026DirichletInverseIdentity.lean"
+      },
+      "lineage": "collected:oeis-a322026-sequence-machine-dirichlet-inverse-identity:s5",
+      "macros": {
+        "\\A": "\\textnormal{A#1}",
+        "\\N": "\\mathbb N",
+        "\\Z": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a322026-sequence-machine-dirichlet-inverse-identity",
+      "scope": "in_scope",
+      "statement": "Let $u=\\A{126760}$, $d=u^{-1}=\\A{323881}$, and\n$D=u+d=\\A{323882}$. For $3$-smooth $s$ and $t$ coprime to $6$,\n\\[\n d(st)=\\mu(s)d(t).\n\\]\nFor any positive integer $M$, $D(Mn)=u(n)$ for all $n\\geq1$\nif and only if $M$ is $3$-smooth and $(4\\mid M\\text{ or }9\\mid M)$.\nIn particular $u(n)=D(4n)=D(9n)$; the first equality is Karttunen's\nFormula of 18 April 2022 in A126760 \\cite{complement,dualinverse,dualsum}.\nMoreover $D(n)>0$ whenever $4\\mid n$ or $9\\mid n$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Multiplier classifications resolving Sequence Machine's conjecture in OEIS A322026, revision 41, final Formula (8 September 2024): extensions of halasz_resonator's inverse calculation (2026)",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a322026-sequence-machine-dirichlet-inverse-identity"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s6",
+      "contributor": null,
+      "identity": "collected:oeis-a322026-sequence-machine-dirichlet-inverse-identity:2:s6",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "e0da8fcc80226febc4e7ea0836927bc71d158292",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/e0da8fcc80226febc4e7ea0836927bc71d158292/D5/S3/Arith/DirichletInverse/OeisA322026DirichletInverseIdentity.lean"
+      },
+      "lineage": "collected:oeis-a322026-sequence-machine-dirichlet-inverse-identity:s6",
+      "macros": {
+        "\\A": "\\textnormal{A#1}",
+        "\\N": "\\mathbb N",
+        "\\Z": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a322026-sequence-machine-dirichlet-inverse-identity",
+      "scope": "in_scope",
+      "statement": "For positive integers $x,n$,\n\\begin{align*}\nR(x)&=\\sum_{i=0}^{\\lfloor\\log_2x\\rfloor}\n \\bigl(\\lfloor\\log_3(x/2^i)\\rfloor+1\\bigr)\\\\\n&=\\sum_{k=1}^x\\mu(6k)\\lfloor x/k\\rfloor\n =\\sum_{k=1}^x\\left(\\left\\lfloor\\frac{6^k}{k}\\right\\rfloor\n -\\left\\lfloor\\frac{6^k-1}{k}\\right\\rfloor\\right),\n\\qquad s(n)=\\gcd(n,6^n).\n\\end{align*}\nThese are the row-count, Cloitre (2007), Browne (2016), and\nSykora (2016) identities in A071521 and A065331 \\cite{count,smoothpart}.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Multiplier classifications resolving Sequence Machine's conjecture in OEIS A322026, revision 41, final Formula (8 September 2024): extensions of halasz_resonator's inverse calculation (2026)",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a322026-sequence-machine-dirichlet-inverse-identity"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s7",
+      "contributor": null,
+      "identity": "collected:oeis-a322026-sequence-machine-dirichlet-inverse-identity:2:s7",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "e0da8fcc80226febc4e7ea0836927bc71d158292",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/e0da8fcc80226febc4e7ea0836927bc71d158292/D5/S3/Arith/DirichletInverse/OeisA322026DirichletInverseIdentity.lean"
+      },
+      "lineage": "collected:oeis-a322026-sequence-machine-dirichlet-inverse-identity:s7",
+      "macros": {
+        "\\A": "\\textnormal{A#1}",
+        "\\N": "\\mathbb N",
+        "\\Z": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a322026-sequence-machine-dirichlet-inverse-identity",
+      "scope": "in_scope",
+      "statement": "Writing $T(i,j)=R(2^j3^i)$ for $i,j\\geq0$, downward antidiagonal\nreading gives A247714, while the transposed array gives A255975.\nThe identification of this array with A087465 in that entry's\nComment of 25 January 2018 is false: $T(7,0)=49$, whereas\nthe A087465 array has entry $48$ at $(7,0)$.\nThe corrected rank parameter is $\\log(3)/\\log(2)$, not $3/2$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Multiplier classifications resolving Sequence Machine's conjecture in OEIS A322026, revision 41, final Formula (8 September 2024): extensions of halasz_resonator's inverse calculation (2026)",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a322026-sequence-machine-dirichlet-inverse-identity"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s8",
+      "contributor": null,
+      "identity": "collected:oeis-a322026-sequence-machine-dirichlet-inverse-identity:2:s8",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "e0da8fcc80226febc4e7ea0836927bc71d158292",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/e0da8fcc80226febc4e7ea0836927bc71d158292/D5/S3/Arith/DirichletInverse/OeisA322026DirichletInverseIdentity.lean"
+      },
+      "lineage": "collected:oeis-a322026-sequence-machine-dirichlet-inverse-identity:s8",
+      "macros": {
+        "\\A": "\\textnormal{A#1}",
+        "\\N": "\\mathbb N",
+        "\\Z": "\\mathbb Z"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "oeis-a322026-sequence-machine-dirichlet-inverse-identity",
+      "scope": "in_scope",
+      "statement": "Let $v(n)=\\A{003602}(n)=(n/2^{v_2(n)}+1)/2$ and\n$E=v+v^{-1}=\\A{349135}$. Then $E(Mn)=v(n)$ for every positive $n$\nexactly when $M=2^r$ with $r\\geq2$. In particular $E(4n)=v(n)$,\nas recorded by Karttunen on 7 December 2021 \\cite{binarysum}.\nFor $w(n)=1+v_2(n)=\\A{001511}(n)$ and\n$J=w+w^{-1}=\\A{323885}$, the identity $J(Mn)=w(n)$ for every\npositive $n$ holds exactly when $M$ is odd and nonsquarefree \\cite{rulersum}.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Multiplier classifications resolving Sequence Machine's conjecture in OEIS A322026, revision 41, final Formula (8 September 2024): extensions of halasz_resonator's inverse calculation (2026)",
+      "toolchain": null,
+      "version": 2,
+      "work": "oeis-a322026-sequence-machine-dirichlet-inverse-identity"
+    }
+  ]
+}

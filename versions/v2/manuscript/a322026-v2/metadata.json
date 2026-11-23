@@ -1,0 +1,25 @@
+{
+  "id": "oeis-a322026-sequence-machine-dirichlet-inverse-identity",
+  "revision": 2,
+  "problem_ids": ["oeis-a322026-sequence-machine-dirichlet-inverse-identity"],
+  "topic": "Sequence Machine's A322026 Dirichlet-inverse conjecture, final Formula in revision 41 (8 September 2024)",
+  "title": "Multiplier classifications resolving Sequence Machine's conjecture in OEIS A322026, revision 41, final Formula (8 September 2024): extensions of halasz_resonator's inverse calculation (2026)",
+  "creators": [
+    {"name": "Ma, Haobo", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Zhang, Wenlin", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "Applying and extending halasz_resonator's inverse calculation (2026, Theorem 4(1)), we prove Sequence Machine's conjecture A322026(n)=A323884(25n), recorded by Antti Karttunen in the final Formula of OEIS A322026, revision 41, 8 September 2024. The rank function a=A322026 is unchanged on multiplying its argument by a prime greater than 3. We show that this invariance forces its Dirichlet inverse b=A323883 to vanish at every multiple of the square of such a prime. We classify all positive multipliers: A323884(Mn)=a(n) for every positive n exactly when gcd(M,6)=1 and M is not squarefree. The same argument proves and extends Karttunen's recorded 2022 identity A126760(n)=A323882(4n). We prove the neighboring rank and ordinal-transform identities and distinguish the smooth-number rank array from the rational rank array in a cross-referenced entry.",
+  "summary": "Extensions of a prior inverse calculation: all-index proofs of the posed A322026 identity, four complete multiplier classifications, and a corrected smooth-rank identification, with original OEIS attributions.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/e0da8fcc80226febc4e7ea0836927bc71d158292/D5/S3/Arith/DirichletInverse/OeisA322026DirichletInverseIdentity.lean",
+  "posing_url": "https://github.com/oeis/oeisdata/blob/f151d82acb28766e6034a902ed9fd0632b16f986/seq/A322/A322026.seq",
+  "posing_locator": "A322026 revision 41, final Formula, 8 September 2024",
+  "coverage": {
+    "lean_declaration": "D5.S3.Arith.DirichletInverse.OeisA322026DirichletInverseIdentity.result",
+    "lean_statement": "For every natural n, a(n)=a(25n)+b(25n), where a is the explicit rank function and b its integer Dirichlet inverse, both extended by zero at n=0.",
+    "written_proofs": ["restricted-growth identification", "prime-support and sign lemma", "b(st)=b(s)mu(t) for 3-smooth s and t coprime to 6", "classification of all positive multipliers", "neighboring rank, record, counting, mutual ordinal-transform and equality-implication formulas", "dual inverse factorization d(st)=mu(s)d(t) and complete multiplier classification for A323882", "elementary smooth-count and gcd identities", "smooth-rank arrays A247714 and A255975; correction of the A087465 smooth-rank Comment at entry (7,0)"],
+    "additional_written_proofs": ["A349135 universal multipliers are exactly powers of 2 at least 4", "A323885 universal multipliers are exactly odd nonsquarefree integers"],
+    "prior_work": "The prime-local mechanism specializes halasz_resonator (2026), Section 3.4, Theorem 4(1); formal prime-variable series are classical (Cashwell and Everett, 1959). OEIS identities retain their original attribution, including Karttunen's 2018 ordinal explanation, 2021 and 2022 dilation identities and 2024 negative A349135 answer.",
+    "finite_checks": "Exact-integer comparisons through index 50000; target identity through n=2000; companion 4n and 9n identities through n=12500 and n=5555; all four multiplier classifications for 1<=M<=1000 with explicit witnesses for excluded M; thirteen published prefixes; A349135(72747675)=-14126242; detailed ranges in verification.json."
+  }
+}
